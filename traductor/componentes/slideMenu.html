@@ -1,0 +1,61 @@
+<!--Componente de barra de deslisamiento SLIDEMENU (Menú lateral del sitio)-->
+
+<div id="slide-menu" class="slide-menu">
+    <button type="button" class="hide-menu" onclick="hideMenu()">←</button>
+    <hr>
+    <!--Banner-->
+    <a href="/traductor" class="logo-menu bounce">
+        <img class="YaquiImg" src="img/YaquiImg.png">
+    </a>
+    <!--Listado de opciones de navegación del sitio-->
+    <ul class="options">
+        <li><a href="sobre_yaquis.php">● Sobre los Yaquis</a></li>
+        <li><a href="puntos_turisticos.php">● Puntos turísticos</a></li>
+        <li><a href="informacion.php">● Información del sitio</a></li>
+        <li><button onclick="showCom()">● Comentarios</button></li>
+    </ul>
+    <!--Información de contacto-->
+    <div class="contacto">
+        <div class="info-cont">
+            <p>Información de contacto:</p>
+            <p>Num. 999 999 9999</p>
+            <p>Email: - - - @ - - - . - - -</p>
+            <!--Redes sociales-->
+            <div class="social">
+                <a href=""><img src="img/facebook.png"></a>
+                <a href=""><img src="img/instagram.png"></a>
+                <a href=""><img src="img/twitter.png"></a>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<!--Elemento de comentarios-->
+<div id="showCom">
+    <div>
+        <div class="showCom-title">
+            <button type="button" class="hide-com" onclick="hideCom()">×
+            </button>
+            <p>Envianos un comentario</p>
+        </div>
+        
+        <p class="comentForm-text">
+            Estamos en constante mejora de nuestros servicios y nos encantaría conocer que piensas de este sitio
+            Traductor Español - yaqui.
+        </p>
+        <div class="comentForm-box">
+            <label for="siteCom">¡Describe tu experiencia!</label>
+            <div class="inputCom">
+                <textarea id="siteCom" oninput="countCharComExp(this)" maxlength="200"></textarea>
+                <div class="tracReport-count">
+                    Max. <span id="charNumExp">200</span>
+                </div>
+            </div>
+        </div>
+        <div class="comentForm-text">
+            <button id="comSiteSubmit" type="button" class="btn-coment btn-comentSubmit" onclick="comSiteSubmit()"></button>
+        </div>
+
+    </div>
+</div>

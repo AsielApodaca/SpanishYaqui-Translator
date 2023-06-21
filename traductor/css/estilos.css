@@ -1,0 +1,714 @@
+    /*Importaciones de fuentes de letra*/
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Signika+Negative&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Readex+Pro&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Mono:wght@300&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
+
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+        border-radius: 0;
+        background: none;
+        border: none;
+        overflow-x: hidden;
+    }
+    
+    *:focus {
+        outline: none;
+    }
+    
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+        background: rgb(228, 228, 228);
+        position: relative;
+        overflow: auto;
+        overflow: initial;
+    }
+    
+    .textarea {
+        width: 100%;
+        min-height: 108px;
+        resize: none;
+        border: none;
+        border-top: 1px solid rgb(192, 192, 192);
+        padding: 20px;
+        font-size: 20px;
+        font-family: 'Open Sans', sans-serif;
+        color: rgb(58, 58, 58);
+    }
+
+    .textarea {
+        display: block;
+    }
+    
+    .textarea:empty::before {
+        content: "Traducción en Yaqui";
+        color: gray;
+    }
+
+    header {
+        position: fixed;
+        top: 0;
+        height: 70px;
+        min-width: 100%;
+        padding: 10px;
+        background: white;
+        border-bottom: 1px solid rgb(192, 192, 192);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 99;
+    }
+    
+    header>button {
+        cursor: pointer;
+    }
+    
+    header>button>img {
+        height: 15px;
+        width: 25px;
+        opacity: .5;
+        margin: 10px 25px 10px 25px;
+    }
+    
+    header>button:hover img {
+        filter: drop-shadow(0 0 8px #222);
+        -webkit-filter: drop-shadow(0 0 8px #222);
+    }
+    
+    .logo {
+        display: flex;
+        align-items: center;
+    }
+    /*Logo bouncing animation*/
+    .bounce{
+        animation-duration: 0.7s;
+        transform-origin: bottom;
+        animation-name: bounceOnLoad;
+        animation-timing-function: ease;
+        animation-delay: 2s;
+    }
+    
+    .bounce:hover{
+        animation-name: bounce;
+        animation-timing-function: ease;
+        animation-delay: unset;
+    }
+
+    @keyframes bounceOnLoad {
+        0%   { transform: translateY(0); }
+        25%   { transform: translateY(-5px); }
+        50%  { transform: translateY(0); }
+        75% { transform: translateY(-3px); }
+        100% { transform: translateY(0); }
+    }
+
+    @keyframes bounce {
+        0%   { transform: translateY(0); }
+        25%   { transform: translateY(-5px); }
+        50%  { transform: translateY(0); }
+        75% { transform: translateY(-3px); }
+        100% { transform: translateY(0); }
+    }
+
+    /*End of animation*/
+    .logo>img {
+        height: 40px;
+        width: auto;
+    }
+    
+    .logo>p {
+        font-size: 20px;
+        margin-left: 10px;
+        margin-top: 7px;
+        font-family: 'Fjalla One', sans-serif;
+        color: rgb(63, 63, 63);
+    }
+    
+    main {
+        padding: 50px 5% 30px 5%;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .container {
+        width: 100%;
+        height: 100%;
+        background: white;
+        border-radius: 5px;
+        border: 1px solid rgb(192, 192, 192);
+        margin-top: 60px;
+        box-shadow: -1px 1px 5px 0px grey;
+    }
+    
+    #lang1 {
+        border-top: none;
+    }
+    
+    .lang>h3 {
+        padding: 15px 0 15px 40px;
+        background: rgb(64, 118, 255);
+        width: 100%;
+        color: white;
+    }
+    
+    .lang>div {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+    }
+    
+    .lang>div>div {
+        color: gray;
+        font-family: 'Open Sans', sans-serif;
+    }
+    
+    .search {
+        display: flex !important;
+    }
+    
+    .search>img {
+        width: 25px;
+        height: auto;
+        align-self: flex-start !important;
+        opacity: .3;
+        cursor: pointer;
+        padding: 10px 5px 0 0;
+        border-top: 1px solid rgb(46, 46, 46);
+    }
+    
+    .change {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 40px;
+        border-bottom: 1px solid rgb(192, 192, 192);
+        border-top: 1px solid rgb(192, 192, 192);
+    }
+    
+    .change>button {
+        color: rgb(0, 88, 250);
+        font-size: 15px;
+        font-weight: 100;
+        font-family: 'Rubik', sans-serif;
+        padding: 5px 40px 5px 40px;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+    
+    .change>button:hover {
+        font-weight: 900;
+    }
+    
+    #search {
+        overflow-y: hidden;
+    }
+    
+    #result {
+        color: gray;
+    }
+    
+    #charNum {
+        padding: 10px 30px 10px 10px;
+    }
+    
+    .copy {
+        opacity: .7;
+        cursor: pointer;
+        height: 30px;
+        width: auto;
+        margin: 0 20px 10px 0;
+    }
+    
+    .copy:hover {
+        filter: drop-shadow(0 0 8px #222);
+        -webkit-filter: drop-shadow(0 0 8px #222);
+        opacity: .9;
+    }
+    
+    .tools {
+        display: flex;
+        align-items: center;
+    }
+    
+    .tools>p {
+        width: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        transition: 100ms linear;
+        font-family: 'Roboto', sans-serif;
+    }
+    
+    .tools:hover>p {
+        width: 140px;
+    }
+    .langComent{
+        color: rgb(82, 82, 82);
+        font-family: 'Red Hat Mono', monospace;
+        font-weight: 100;
+        font-size: 13px;
+        margin: 0 auto 0 10px;
+        font-style: italic;
+    }
+    .langComent:hover{
+        cursor: pointer;
+        text-decoration: underline;
+
+    }
+    /*Slide menu*/
+    
+    .slide-menu {
+        position: fixed;
+        width: 250px;
+        height: 100%;
+        background: white;
+        right: -500px;
+        top: 0;
+        box-shadow: -4px 0px 10px 1px #aaaaaa, inset 0px -190px 100px -90px #aaaaaa;
+        transition: 250ms linear;
+        z-index: 150;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .slide-menu>* {
+        position: absolute;
+        z-index: 999;
+    }
+    
+    .contacto {
+        top: 0;
+        color: gray;
+        width: 100%;
+        height: 100%;
+        min-height: 500px;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        z-index: 800 !important;
+    }
+    
+    .info-cont {
+        display: block;
+        align-items: center;
+        width: 100%;
+        padding-bottom: 10px;
+    }
+    
+    .info-cont>p {
+        margin-left: 30px;
+    }
+    
+    .social {
+        margin-top: 20px;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    .social>a>img {
+        height: 50px;
+        width: auto;
+        border-radius: 50%;
+        border: white solid 3px;
+        cursor: pointer;
+    }
+    
+    .social>a>img:hover {
+        border: white solid 4px;
+    }
+    
+    .hide-menu {
+        font-family: 'Signika Negative', sans-serif;
+        font-size: 40px;
+        color: gray;
+        cursor: pointer;
+        top: 12px;
+        left: 20px;
+    }
+    
+    .hide-menu:hover {
+        filter: drop-shadow(0 0 8px #222);
+        -webkit-filter: drop-shadow(0 0 8px #222);
+    }
+    
+    hr {
+        width: 100%;
+        top: 69px;
+        border-top: 1px solid rgb(192, 192, 192);
+    }
+    
+    .options {
+        top: 220px;
+        left: 25px;
+    }
+    
+    .options>li {
+        margin-top: 10px;
+    }
+    
+    .options>li>* {
+        color: #555;
+        font-family: 'Readex Pro', sans-serif;
+        font-size: 15px;
+        cursor: pointer;
+    }
+    
+    .options>li>*:hover {
+        text-decoration: underline;
+    }
+    
+    .logo-menu {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 90px;
+    }
+    
+    .logo-menu>img {
+        height: 35px;
+        width: auto;
+    }
+    .logo-menu>.YaquiImg{
+        height: 120px;
+        width: auto;
+    }
+    
+    .logo-menu>p {
+        font-size: 15px;
+        margin-left: 7px;
+        font-family: 'Fjalla One', sans-serif;
+        color: rgb(63, 63, 63);
+    }
+    /*Curiosidades*/
+    
+    .curiosidades {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .divisor {
+        border-bottom: 1px solid rgb(192, 192, 192);
+        width: 15%;
+        transition: 200ms linear;
+    }
+    
+    #curiosidad {
+        color: rgb(60, 60, 60);
+        width: 70%;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        transition: 200ms linear;
+        font-family: 'Ubuntu', sans-serif;
+    }
+    
+    #ver-mas {
+        width: 100%;
+        text-align: center;
+        cursor: pointer;
+        color: rgb(60, 60, 60);
+        margin-top: 6px;
+        font-family: 'Ubuntu', sans-serif;
+        font-weight: 900;
+    }
+    
+    #ver-mas:hover {
+        opacity: .7;
+    }
+    /*Informacion*/
+    
+    #info {
+        width: 100%;
+        max-height: 0;
+        transition: 700ms linear;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .info {
+        width: 90%;
+        background: white;
+        border: 1px solid rgb(192, 192, 192);
+        border-radius: 5px;
+        box-shadow: -1px 5px 10px 0px#aaaaaa;
+        margin-bottom: 15px;
+        padding: 20px;
+        font-family: 'Ubuntu', sans-serif;
+        overflow-y: hidden;
+    }
+    
+    .curiosidadEnt {
+        display: flex;
+        align-items: center;
+        text-align: justify;
+        color: rgb(119, 119, 119);
+    }
+    
+    .curiosidadEnt>.divisor {
+        width: 30% !important;
+    }
+    /*#showCom*/
+    
+    #showCom, #comentLang {
+        top: 0;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.4);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        visibility: hidden;
+    }
+    #comentLang{
+        background: none;
+    }
+    .comentForm{
+        background:rgb(243, 243, 243);
+        width: 400px;
+        height: auto;
+    }
+    .comentForm-barra{
+        background-color: rgb(62, 98, 189);
+        height: 50px;
+        width: 100%;
+        display: flex;
+    }
+    .comentForm-sign{
+        color: white;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 20px;
+        margin-left: 30px;
+        align-self: center;
+    }
+    .comentForm-text{
+        width: 100%;
+        padding: 20px;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 14px;
+        color: rgb(100, 100, 100);
+        text-align: justify;
+        display: flex;
+        justify-content: end;
+    }
+    .comentForm-box{
+        background-color: white;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 14px;
+        padding: 20px;
+    }
+    .inputCom{
+        margin: 5px 0 5px 0;
+        border: 2px solid rgb(201, 201, 201);
+        width: 100%;
+        padding: 5px;
+    }
+    #tracReport,#siteCom{
+        width: 100%;
+        height: 47px;
+        resize: none;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 100;
+    }
+    .tracReport-count{
+        font-family: 'Comfortaa', cursive;
+        font-weight: 100;
+        font-size: 13px;
+        font-style: italic;
+        color: gray;
+        width: 100%;
+        text-align: end;
+        padding-right: 3px;
+    }
+    .tracReport-aviso{
+        color: gray;
+        font-size: 11px;
+    }
+    .btn-coment{
+        background-color: rgb(209, 209, 209);
+        color: rgb(82, 82, 82);
+        cursor: pointer;
+        padding: 8px 0 8px 0;
+        width: 90px;
+        margin-left: 10px;
+    }
+    .btn-coment:hover{
+        transform: scale(1.07);
+        opacity: .7;
+    }
+    .btn-comentSubmit{
+        opacity: .7;
+    }
+    #comTracSubmit::before,#comSiteSubmit::before{
+        color: rgb(62, 122, 190)!important;
+        content: "ENVIAR";
+    }
+    .comTracSubmit::before{
+        animation: submit 4s;
+    }
+    @keyframes submit {
+        0% {content: "..."; font-weight: 900;}
+        70% {content: "ENVIADO"; font-weight:100;}
+        
+    }
+    #showCom>div {
+        background: rgb(237, 237, 237);
+        width: 400px;
+        height: auto;
+        border-radius: 3px;
+    }
+    
+    .showCom-title {
+        width: 100%;
+        background-color: rgb(68, 104, 196);
+        display: flex;
+        align-items: center;
+    }
+    .showCom-title>*{
+        margin: 10px 5px 10px 15px;
+        color: white;
+        font-family: 'Open Sans', sans-serif;
+    }
+    
+    .hide-com {
+        cursor: pointer;
+        font-size: 30px;
+        align-self: start;
+    }
+    
+    .hide-com:hover {
+        opacity: .6;
+    }
+    
+    #comentario {
+        border: 2px solid rgb(201, 201, 201);
+        width: 100%;
+        height: 30px;
+        padding: 5px;
+    }
+    
+    /*General*/
+    .copyright{
+        color: gray;
+        font-style: italic;
+        font-weight: 100;
+        font-size: 15px;
+    }
+    .container-info {
+        width: 100%;
+        height: 100%;
+        background: white;
+        border-radius: 4px;
+        border: 1px solid rgb(177, 177, 177);
+        margin: 60px 0 20px 0;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .container-info>img {
+        max-width: 300px;
+    }
+    
+    .content-info>h2 {
+        margin-bottom: 20px;
+    }
+    
+    .content-info {
+        margin: 40px;
+        font-family: 'Open Sans', sans-serif;
+        text-align: justify;
+    }
+    
+    .space {
+        display: flex;
+        width: 100%;
+    }
+    
+    .space>div {
+        width: 250px;
+    }
+    
+    .titulo {
+        background: rgb(51, 98, 214);
+        color: white;
+        margin: 60px 0 -60px 0;
+        padding: 20px;
+        font-size: 20px;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+    /*Responsive*/
+    
+    @media only screen and (max-width: 768px) {
+        .slide-menu {
+            width: 350px;
+        }
+        .options>li>* {
+            font-size: 30px;
+        }
+        .social {
+            margin-top: 40px;
+        }
+        .space>div {
+            width: 0;
+        }
+        .contacto {
+            min-height: 550px;
+        }
+        #origen>img,
+        #pueblo>img,
+        #festejo>img,
+        #centro>img,
+        #museo>img,
+        #danzante>img {
+            width: 0;
+        }
+        #origen {
+            background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://www.gob.mx/cms/uploads/image/file/417528/cdi-etnografia-yaquis-53146.jpg) no-repeat;
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+        #pueblo {
+            background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://www.gob.mx/cms/uploads/article/main_image/66596/cdi-etnografia-yaquis-web.jpg) no-repeat;
+            background-size: cover;
+            color: white;
+        }
+        #festejo {
+            background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://videos.jornada.com.mx/media/thumbs/db/96/db96dae9c41f9103f8f2703c26af29ef.jpg) no-repeat;
+            background-size: cover;
+            color: white;
+        }
+        #museo {
+            background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(http://isc.gob.mx/devel/wp-content/uploads/2021/05/Museo-de-los-Yaquis-1024x768.jpg) no-repeat;
+            background-size: cover;
+            color: white;
+        }
+        #danzante {
+            background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://viajacomolocal.com/wp-content/uploads/2018/03/img_e4896.jpg) no-repeat;
+            background-size: cover;
+            color: white;
+        }
+        #centro {
+            background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://visitaobregon.gob.mx/storage/2018/03/Yoo-Juara.jpg) no-repeat;
+            background-size: cover;
+            color: white;
+        }
+    }
